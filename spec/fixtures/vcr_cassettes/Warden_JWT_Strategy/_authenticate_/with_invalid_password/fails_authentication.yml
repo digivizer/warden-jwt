@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:4000/oauth/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=password&username=you%40example.com&password=pass
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '60'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/xml; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 4a1facd0-cfb6-4a1d-a266-d9b0d4aa2e92
+      X-Runtime:
+      - '0.103057'
+      Connection:
+      - close
+      Server:
+      - thin
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <errors>
+          <error>Invalid login or password.</error>
+        </errors>
+    http_version: 
+  recorded_at: Tue, 28 Jul 2015 03:41:37 GMT
+recorded_with: VCR 2.9.3

@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:4000/oauth/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=password&username=you%40example.com&password=mypassword
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '66'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - no-store
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"745b7d26dc386138c4cac5914250021b"
+      Set-Cookie:
+      - _oauth-provider-doorkeeper_session=VGxZYkVEUHM2TXhqNkxTb0VqM3ZrMWJ0NEpLWm9iZzgvcWR3a2lxVktGd0lPMFBIbVBBVGE4dVBYSXFmVmxlckhiVjlleElGaEFFOEJzYmRBNUltZWc9PS0tVVNrVVhvL3pzaWs3aW1ZMlY0d0NpQT09--b8cdb35682eda8b627cb0bc52cd2918cec880d7c;
+        path=/; HttpOnly
+      X-Request-Id:
+      - 8c70bde2-a5a6-4341-9c4b-1e399dd750d7
+      X-Runtime:
+      - '0.379515'
+      Connection:
+      - close
+      Server:
+      - thin
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOiIyMDE1LTA3LTI4VDA0OjE0OjA5Ljg0NCswMDowMCIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NDAwMCIsImF1ZCI6WyIxZjI0YmY1NDJiNjkyNWZmM2IxODAzMmY5MzExYzEyMmMyMTA2OGNlMGEwOTAzM2IyMDcxMTJmODI2ZGIzZDdmIl0sInVpZCI6OSwidW4iOiJ0ZXN0IiwiZW1haWwiOiJ5b3VAZXhhbXBsZS5jb20iLCJmbiI6IlRlc3QiLCJsbiI6IlRlc3QiLCJuIjoiVGVzdCIsInIiOiJkZWZhdWx0IiwibSI6W3sicCI6ImRlZmF1bHQiLCJvaWQiOiIxZjI0YmY1NDJiNjkyNWZmM2IxODAzMmY5MzExYzEyMmMyMTA2OGNlMGEwOTAzM2IyMDcxMTJmODI2ZGIzZDdmIiwibyI6IkRpZ2lmaW5kIn1dfQ.DPWNg9ESIDUJRVGhD1ICKs93YryTWRNXyu4Fv7QmSwM","token_type":"bearer","expires_in":7200,"refresh_token":"aa729119459f41d03c7d6076f3115d5162ad00a2890d45ebc570002f3bed2f21","scope":"public","created_at":1438056849}'
+    http_version: 
+  recorded_at: Tue, 28 Jul 2015 04:14:09 GMT
+recorded_with: VCR 2.9.3
