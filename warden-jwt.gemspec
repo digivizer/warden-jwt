@@ -19,20 +19,20 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency "jwt"
-  spec.add_runtime_dependency "rest-client"
-  spec.add_runtime_dependency "warden"
-  spec.add_runtime_dependency "addressable"
+  spec.add_runtime_dependency 'jwt', '~> 1.5'
+  spec.add_runtime_dependency 'rest-client', '~> 1.8'
+  spec.add_runtime_dependency 'warden', '~> 1.2'
+  spec.add_runtime_dependency 'addressable', '~> 2.3'
 
-  spec.add_development_dependency "bundler", "~> 1.10"
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rack"
-  spec.add_development_dependency "rspec"
-  spec.add_development_dependency "simplecov"
-  spec.add_development_dependency "vcr"
-  spec.add_development_dependency "webmock"
-  spec.add_development_dependency "multi_json"
-  spec.add_development_dependency "guard"
-  spec.add_development_dependency "guard-rspec"
-  spec.add_development_dependency "guard-bundler"
+  spec.add_development_dependency 'bundler', '~> 1.0'
+  spec.add_development_dependency 'rake', '~> 10'
+  spec.add_development_dependency 'rack', '~> 1.6'
+  spec.add_development_dependency 'rspec', '~> 3.3'
+  spec.add_development_dependency 'simplecov', '~> 0.10'
+  spec.add_development_dependency 'vcr', '~> 2.9'
+  spec.add_development_dependency 'webmock', '~> 1.21'
+  spec.add_development_dependency 'multi_json', '~> 1.11'
+  spec.add_development_dependency 'guard', '~> 2.11'
+  spec.add_development_dependency 'guard-rspec', '~> 4.5'
+  spec.add_development_dependency 'guard-bundler', '~> 0.1'
 end
