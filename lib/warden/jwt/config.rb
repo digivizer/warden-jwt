@@ -93,6 +93,10 @@ module Warden
         custom_config.fetch(:verify_audience, true)
       end
 
+      def client_options
+        custom_config.fetch(:client_options, {})
+      end
+
       def to_hash
         { :issuer     => issuer,
           :audience   => audience,
@@ -100,7 +104,8 @@ module Warden
           :username_param => username_param,
           :password_param => password_param,
           :verify_issuer => verify_issuer,
-          :verify_audience => verify_audience }
+          :verify_audience => verify_audience,
+          :client_options => client_options }
       end
 
       private

@@ -19,6 +19,7 @@ describe Warden::JWT::Strategy do
   let(:audience) { '1f24bf542b6925ff3b18032f9311c122c21068ce0a09033b207112f826db3d7f' }
   let(:verify_audience) { false }
   let(:verify_issuer) { false }
+  let(:client_options) { {} }
 
   let(:scope_config) do
     {
@@ -26,7 +27,8 @@ describe Warden::JWT::Strategy do
       :audience => audience,
       :secret => secret,
       :verify_audience => verify_audience,
-      :verify_issuer => verify_issuer
+      :verify_issuer => verify_issuer,
+      :client_options => client_options
     }
   end
 
@@ -121,6 +123,18 @@ describe Warden::JWT::Strategy do
       end
     end
 
+    context "#fetch_token" do
+      context "with client_options set" do
+        let(:client_options) { { :moo => :cow } }
+
+        it "merges options into RestClient params" do
+          request = double('request', :execute => nil)
+          allow(RestClient::Request).to receive(:new).and_return(request)
+          strategy.fetch_token
+          expect(RestClient::Request).to have_received(:new).with(hash_including(client_options))
+        end
+      end
+    end
 
     context "with issuer check" do
       let(:verify_issuer) { true }

@@ -32,14 +32,17 @@ module Warden
         token_url = Addressable::URI.parse(config[:issuer])
         token_url.path = "/oauth/token"
 
-        response = ::RestClient.post(
-          token_url.to_s,
+        response = ::RestClient::Request.new(
           {
-            :grant_type => :password,
-            :username => params[config[:username_param]],
-            :password => params[config[:password_param]]
-          }
-        )
+            :method => :post,
+            :url => token_url.to_s,
+            :payload => {
+              :grant_type => :password,
+              :username => params[config[:username_param]],
+              :password => params[config[:password_param]]
+            }
+          }.merge(config[:client_options])
+        ).execute
 
         yield(response) if block_given?
       rescue RestClient::Unauthorized

@@ -149,6 +149,22 @@ describe Warden::JWT::Config do
     end
   end
 
+  describe "#client_options" do
+    context "when specified in config" do
+      let(:client_options) { { :client_options => { :ssl => { :verify => false } } } }
+      it "returns the client_options param" do
+        scope_config[:client_options] = client_options
+        expect(config.client_options).to eq(client_options)
+      end
+    end
+
+    context "when not specified" do
+      it "returns nil" do
+        expect(config.client_options).to eq({})
+      end
+    end
+  end
+
   describe "#verify_audience" do
     context 'when specified in config' do
       it 'returns the verify_audience param' do
@@ -173,11 +189,12 @@ describe Warden::JWT::Config do
         :username_param => 'wef',
         :password_param => 'wef',
         :verify_issuer => 'wef',
-        :verify_audience => 'wef'
+        :verify_audience => 'wef',
+        :client_options => 'wef'
       )
 
       expect(config.to_hash.keys).
-        to match_array([:issuer, :audience, :secret, :username_param, :password_param, :verify_issuer, :verify_audience])
+        to match_array([:issuer, :audience, :secret, :username_param, :password_param, :verify_issuer, :verify_audience, :client_options])
       end
   end
 end
