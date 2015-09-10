@@ -1,5 +1,7 @@
 # Warden::JWT
 
+[![Build Status](https://travis-ci.org/dgvz/warden-jwt.svg?branch=master)](https://travis-ci.org/dgvz/warden-jwt)
+
 This is a simple wrapper for [JWT](https://github.com/jwt/ruby-jwt) so that it can be used from a warden project. It provides a helper for storing the user into the session.
 
 Warden provides a consistent interface for projects, engines, and arbitrary rack applicaitons.  The benefit of warden, is that you do not need to know what the host application considers authentication to use it.  It also provides a way to store the user in the session etc.
