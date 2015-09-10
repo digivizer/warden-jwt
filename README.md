@@ -26,7 +26,7 @@ Or install it yourself as:
 
 Initialise the strategy, perhaps through `lib/warden_initializer.rb`
 
-```
+```ruby
 require 'warden/jwt'
 require 'openssl/ssl'
 
@@ -47,10 +47,10 @@ Warden::Strategies.add(:jwt, Warden::JWT::Strategy) do
 end
 ```
 
-You will also need to configure JWT for use. It's essential do define your
+You will also need to configure JWT for use. It's essential to define your
 shared secret here, which is passed in using `:secret`.
 
-```
+```ruby
 module WardenInitializer
   def self.registered(app)
     app.register Padrino::Warden
