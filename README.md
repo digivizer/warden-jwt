@@ -22,7 +22,7 @@ Or install it yourself as:
 
     $ gem install warden-jwt
 
-## Usage (Psdrino)
+## Usage (Padrino)
 
 Initialise the strategy, perhaps through `lib/warden_initializer.rb`
 
