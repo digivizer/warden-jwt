@@ -1,6 +1,8 @@
 # Warden::JWT
 
-[![Build Status](https://travis-ci.org/dgvz/warden-jwt.svg?branch=master)](https://travis-ci.org/dgvz/warden-jwt) [![Code Climate](https://codeclimate.com/github/dgvz/warden-jwt/badges/gpa.svg)](https://codeclimate.com/github/dgvz/warden-jwt) [![Test Coverage](https://codeclimate.com/github/dgvz/warden-jwt/badges/coverage.svg)](https://codeclimate.com/github/dgvz/warden-jwt/coverage)
+[![Build Status](https://travis-ci.org/dgvz/warden-jwt.svg?branch=master)](https://travis-ci.org/dgvz/warden-jwt)
+[![Code Climate](https://codeclimate.com/repos/596d4f2986073502ac00080b/badges/2bd306a3d6531c0b2298/gpa.svg)](https://codeclimate.com/repos/596d4f2986073502ac00080b/feed)
+[![Test Coverage](https://codeclimate.com/repos/596d4f2986073502ac00080b/badges/2bd306a3d6531c0b2298/coverage.svg)](https://codeclimate.com/repos/596d4f2986073502ac00080b/coverage)
 
 This is a simple wrapper for [JWT](https://github.com/jwt/ruby-jwt) so that it can be used from a warden project. It provides a helper for storing the user into the session.
 
